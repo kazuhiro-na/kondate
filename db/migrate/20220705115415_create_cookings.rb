@@ -3,7 +3,7 @@ class CreateCookings < ActiveRecord::Migration[6.0]
     create_table :cookings do |t|
       t.string    :name, null: false
       t.integer   :category
-      t.reference :user, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end
