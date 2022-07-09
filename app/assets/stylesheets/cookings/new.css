@@ -84,3 +84,8 @@
   text-decoration: none;
 }
 
+.category-select{
+  height: 30px;
+  width: 250px;
+  border: 1px solid #ccc;
+}

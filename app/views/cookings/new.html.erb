@@ -26,7 +26,7 @@
         <div class="weight-bold-text">
           カテゴリー
         </div>
-        <%= f.text_area :category, class:"cookings-text", id:"cooking-info", placeholder:"カテゴリーはActiveHashを使用する" %>
+        <%= f.collection_select :category_id, Category.all, :id, :name, {}, {class:"category-select"} %>
       </div>
       <div class="weight-bold-text">
         材料

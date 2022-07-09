@@ -11,4 +11,7 @@ class Category < ActiveHash::Base
     {id: 8, name: 'シチュー・スープ・汁物'},
     {id: 9, name: '鍋'}
   ]
+
+  include ActiveHash::Associations
+  has_many :cookings
 end
