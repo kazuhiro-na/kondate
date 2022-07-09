@@ -1,7 +1,7 @@
 <div class="cookings-sell-contents">
   <div class="cookings-sell-main">
     <h2 class="cookings-sell-title">料理情報を入力</h2>
-    <%= form_with model: @cooking, local: true do |f| %>
+    <%= form_with model: @cooking_ingredient, url: cookings_path, local: true do |f| %>
 
     <%# 料理画像 %>
     <div class="img-upload">
@@ -31,31 +31,31 @@
       <div class="weight-bold-text">
         材料
       </div>
-      <%= f.text_area :name, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+      <%= f.text_area :ingredient1, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
       <div class="weight-bold-text">
         材料
       </div>
-      <%= f.text_area :name, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+      <%= f.text_area :ingredient2, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
       <div class="weight-bold-text">
         材料
       </div>
-      <%= f.text_area :name, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+      <%= f.text_area :ingredient3, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
       <div class="weight-bold-text">
         材料
       </div>
-      <%= f.text_area :name, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+      <%= f.text_area :ingredient4, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
       <div class="weight-bold-text">
         材料
       </div>
-      <%= f.text_area :name, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+      <%= f.text_area :ingredient5, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
       <div class="weight-bold-text">
         材料
       </div>
-      <%= f.text_area :name, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+      <%= f.text_area :name, ingredient6:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
       <div class="weight-bold-text">
         材料
       </div>
-      <%= f.text_area :name, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+      <%= f.text_area :ingredient7, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
     </div>
     <%# /料理情報入力 %>
 
