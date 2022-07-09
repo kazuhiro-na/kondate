@@ -22,21 +22,21 @@
           <div class="nav__left text-success">
             <h1>献立ランダムシステム</h1>
           </div>
-          <%# ログインしているときは以下を表示するようにしましょう %>
           <% if user_signed_in? %>
-            <div class="nav__right">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "料理登録", root_path, class: :nav__btn %>
+            <div class="pull-right">
+              <a class="btn btn-primary" href="/users/sign_out" role="button" data-method="delete">ログアウト
+              </a>
+              <a class="btn btn-primary" href="/cookings/new" role="button">料理登録
+              </a>
             </div>
-          <%# // ログインしているときは上記を表示するようにしましょう %>
-          <%# ログインしていないときは以下を表示するようにしましょう %>
           <% else %>
-            <div class="nav__right">
-              <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
-              <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
-            </div>
+          <div class="pull-right">
+            <a class="btn btn-primary" href="/users/sign_in" role="button">ログイン
+            </a>
+            <a class="btn btn-primary" href="/users/sign_up" role="button">新規登録
+            </a>
+          </div>
           <% end %>
-          <%# // ログインしていないときは上記を表示するようにしましょう %>
         </div>
       </div>
     </header>
