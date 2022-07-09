@@ -19,10 +19,6 @@ class CookingsController < ApplicationController
   private
 
   def cooking_params
-    params.require(:cooking_ingredient).permit(:image, :name, :category, :ingredient1, :ingredient2, :ingredient3, :ingredient4, :ingredient5, :ingredient6, :ingredient7).merge(user_id: current_user.id)
-  end
-
-  def ingredient_params
-    params.permit(:ingredient1, :ingredient2, :ingredient3, :ingredient4, :ingredient5, :ingredient6, :ingredient7).merge(cooking_id: @cooking.id)
+    params.require(:cooking_ingredient).permit(:image, :name, :category_id, :ingredient1, :ingredient2, :ingredient3, :ingredient4, :ingredient5, :ingredient6, :ingredient7).merge(user_id: current_user.id)
   end
 end
