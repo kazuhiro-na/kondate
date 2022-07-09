@@ -3,6 +3,7 @@ class Cooking < ApplicationRecord
   belongs_to :category
   belongs_to :user
   has_one :ingredient
+  has_one_attached :image
 
   with_options presence: true do
     validates :image
