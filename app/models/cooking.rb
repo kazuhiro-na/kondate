@@ -4,5 +4,4 @@ class Cooking < ApplicationRecord
   belongs_to :user
   has_one :ingredient
   has_one_attached :image
-
 end
