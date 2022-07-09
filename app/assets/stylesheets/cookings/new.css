@@ -67,8 +67,6 @@
 }
 
 .sell-btn {
-  background: #458ad9;
-  border: 1px solid #74a1ea;
   color: #fff;
   width: 100%;
   height: 50px;
@@ -77,11 +75,10 @@
 }
 
 .back-btn {
-  background: #aaa;
-  border: 1px solid #aaa;
   color: #fff;
+  width: 50%;
+  height: 50%;
   padding: 15px 35%;
-  text-decoration: none;
 }
 
 .category-select{
