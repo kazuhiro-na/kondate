@@ -28,8 +28,8 @@ https://kondate-37427.herokuapp.com/
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/b5871a41d25044054376e111c0c67040.png)](https://gyazo.com/b5871a41d25044054376e111c0c67040)
 # 開発環境
-・フロントエンド：HTML, CSS, jQuery
-・サーバーサイド：Ruby
-・フレームワーク：Ruby on Rails
+・フロントエンド：HTML, CSS, jQuery  
+・サーバーサイド：Ruby  
+・フレームワーク：Ruby on Rails  
 # ローカルでの動作方法
 # 工夫したポイント
