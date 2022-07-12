@@ -1,6 +1,8 @@
 class CookingsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   def index
+    @random = Cooking.order('RAND()').limit(5)
+    @cookings = Cooking.all
   end
 
   def new
