@@ -1,2 +1,40 @@
-<h1>Cookings#index</h1>
-<p>Find me in app/views/cookings/index.html.erb</p>
+<div class='item-contents'>
+  <a class="btn btn-warning" href="#">ランダム</a>
+  <div class="subtitle" >
+    献立一覧
+  </div>
+  <ul class='item-lists'>
+
+    <% @random.each do |cooking| %>
+      <li class='list'>
+        <%= link_to root_path do %>
+        <div class='item-img-content'>
+          <%= image_tag cooking.image, class: 'item-img' %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= cooking.name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= cooking.category.name %></span>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+
+    <% if @cookings.length == 0 %>
+    <li class='list'>
+      <%= link_to '#' do %>
+      <%= image_tag("6422cf540f1af648323d959c54dffb7659cb38c3.82.2.3.2.jpg", class: "item-img") %>
+      <div class='item-info'>
+        <h3 class='item-name'>
+          料理を登録してね！
+        </h3>
+      </div>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
