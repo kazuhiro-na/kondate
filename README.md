@@ -19,6 +19,7 @@ https://kondate-37427.herokuapp.com/
 # 洗い出した要件
 [要件を定義したシート](https://docs.google.com/spreadsheets/d/1UR9DD2WO1-waoPM30F4Ey6nfHtSKaI3y_M5lSEKrWBY/edit#gid=982722306)
 # 実装した機能についての画像やGIFおよびその説明
+・ランダムボタンを押すと、献立リストが入れ替わる。
 [![Image from Gyazo](https://i.gyazo.com/5ea04994b7d5b43e48c721557a0c47b6.gif)](https://gyazo.com/5ea04994b7d5b43e48c721557a0c47b6)
 # 実装予定の機能
 現在、登録した料理をランダムに表示する機能を実装中。  
