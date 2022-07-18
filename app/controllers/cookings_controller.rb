@@ -1,9 +1,11 @@
 class CookingsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :create]
+  before_action :authenticate_user!, only: [:new, :create]
   def index
-    cookings = Cooking.where(user_id: current_user.id)
-    @random = cookings.order('RAND()').limit(5)
-    @cookings = cookings.all
+    if user_signed_in?
+      cookings = Cooking.where(user_id: current_user.id)
+      @random = cookings.order('RAND()').limit(5)
+      @cookings = cookings.all
+    end
   end
 
   def new
