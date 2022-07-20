@@ -22,7 +22,12 @@ class CookingsController < ApplicationController
     end
   end
 
-  private
+  def show
+    @cooking = Cooking.find(params[:id])
+    @ingredient = @cooking.ingredient
+  end
+
+  private 
 
   def cooking_params
     params.require(:cooking_ingredient).permit(:image, :name, :category_id, :ingredient1, :ingredient2, :ingredient3,
