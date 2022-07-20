@@ -27,10 +27,21 @@
           </div>
           <% if user_signed_in? %>
             <div class="pull-right">
-              <a class="btn btn-primary" href="/users/sign_out" role="button" data-method="delete">ログアウト
-              </a>
-              <a class="btn btn-primary" href="/cookings/new" role="button">料理登録
-              </a>
+              <%# <a class="btn btn-primary" href="/users/sign_out" role="button" data-method="delete">ログアウト
+              </a> %>
+              <div class="dropdown d-inline-block">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <%= current_user.name %>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><%= link_to "マイページ", "/users/#{current_user.id}", class:"dropdown-item" %></li>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
+                </ul>
+              </div>
+              <div class = "get-cooking d-inline-block">
+                <a class="btn btn-primary" href="/cookings/new" role="button">料理登録
+                </a>
+              </div>
             </div>
           <% else %>
           <div class="pull-right">
