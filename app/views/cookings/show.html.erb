@@ -1,0 +1,35 @@
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @cooking.name %>
+    </h2>
+    <div class="item-img-content">
+      <%= image_tag @cooking.image ,class:"item-box-img img-thumbnail" %>
+    </div>
+    <div class="item-price-box">
+      <span class="item-postate">
+        <%= @cooking.category.name %>
+      </span>
+    </div>
+    <div class="ingredients-dropdown">
+      <button class="btn btn-secondary dropdown-toggle btn-success" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        材料リスト
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><%= @ingredient.ingredient1 %></li>
+        <li><%= @ingredient.ingredient2 %></li>
+        <li><%= @ingredient.ingredient3 %></li>
+        <li><%= @ingredient.ingredient4 %></li>
+        <li><%= @ingredient.ingredient5 %></li>
+        <li><%= @ingredient.ingredient6 %></li>
+        <li><%= @ingredient.ingredient7 %></li>
+      </ul>
+    </div>
+    <% if user_signed_in? && @cooking.user_id == current_user.id %>
+      <div class="d-inline-block mt-5">
+        <%= link_to "料理の編集", root_path, method: :get, class: "btn btn-secondary btn-lg" %>
+        <%= link_to "削除", root_path, method: :delete, class:"btn btn-danger btn-lg" %>
+      </div>
+    <% end %>
+  </div>
+</div>
