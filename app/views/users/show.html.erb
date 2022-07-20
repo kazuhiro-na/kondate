@@ -1,0 +1,24 @@
+<div class="item-contents">
+  <div class="subtitle">
+    <%= "#{@name}さんの料理一覧" %>
+  </div>
+  <ul class="item-lists">
+    <% @cookings.each do |cooking| %>
+      <li class='list'>
+        <%= link_to root_path do %>
+          <div class='item-img-content'>
+            <%= image_tag cooking.image, class: 'item-img' %>
+          </div>
+          <div class='item-info'>
+            <h3 class='item-name'>
+              <%= cooking.name %>
+            </h3>
+            <div class='item-price'>
+              <span><%= cooking.category.name %></span>
+            </div>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
