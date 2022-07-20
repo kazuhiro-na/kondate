@@ -1,5 +1,5 @@
 class CookingsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :show]
   def index
     if user_signed_in?
       cookings = Cooking.where(user_id: current_user.id)
