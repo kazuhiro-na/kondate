@@ -1,5 +1,5 @@
 class CookingsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :show]
   def index
     if user_signed_in?
       cookings = Cooking.where(user_id: current_user.id)
@@ -22,7 +22,12 @@ class CookingsController < ApplicationController
     end
   end
 
-  private
+  def show
+    @cooking = Cooking.find(params[:id])
+    @ingredient = @cooking.ingredient
+  end
+
+  private 
 
   def cooking_params
     params.require(:cooking_ingredient).permit(:image, :name, :category_id, :ingredient1, :ingredient2, :ingredient3,

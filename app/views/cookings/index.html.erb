@@ -7,7 +7,7 @@
     <% if user_signed_in? && @cookings.length != 0 %>
       <% @random.each do |cooking| %>
         <li class='list'>
-          <%= link_to root_path do %>
+          <%= link_to cooking_path(cooking.id) do %>
           <div class='item-img-content'>
             <%= image_tag cooking.image, class: 'item-img' %>
           </div>
@@ -19,6 +19,20 @@
               <span><%= cooking.category.name %></span>
             </div>
           </div>
+          <div class="ingredients-dropdown">
+            <button class="btn btn-secondary dropdown-toggle btn-success" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              材料リスト
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><%= cooking.ingredient.ingredient1 %></li>
+              <li><%= cooking.ingredient.ingredient2 %></li>
+              <li><%= cooking.ingredient.ingredient3 %></li>
+              <li><%= cooking.ingredient.ingredient4 %></li>
+              <li><%= cooking.ingredient.ingredient5 %></li>
+              <li><%= cooking.ingredient.ingredient6 %></li>
+              <li><%= cooking.ingredient.ingredient7 %></li>
+            </ul>
+          </div>          
           <% end %>
         </li>
       <% end %>
