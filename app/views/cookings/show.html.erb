@@ -11,18 +11,30 @@
         <%= @cooking.category.name %>
       </span>
     </div>
-    <div class="ingredients-dropdown">
-      <button class="btn btn-secondary dropdown-toggle btn-success" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        材料リスト
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><%= @ingredient.ingredient1 %></li>
-        <li><%= @ingredient.ingredient2 %></li>
-        <li><%= @ingredient.ingredient3 %></li>
-        <li><%= @ingredient.ingredient4 %></li>
-        <li><%= @ingredient.ingredient5 %></li>
-        <li><%= @ingredient.ingredient6 %></li>
-        <li><%= @ingredient.ingredient7 %></li>
+    <div class="ingredients">
+      <h4>材料リスト</h4>
+      <ul class="ingredients-list">
+        <% unless @ingredient.ingredient1 == "" %>
+          <li><%= @ingredient.ingredient1 %></li>
+        <% end %>
+        <% unless @ingredient.ingredient2 == "" %>
+          <li><%= @ingredient.ingredient2 %></li>
+        <% end %>
+        <% unless @ingredient.ingredient3 == "" %>
+          <li><%= @ingredient.ingredient3 %></li>
+        <% end %>
+        <% unless @ingredient.ingredient4 == "" %>
+          <li><%= @ingredient.ingredient4 %></li>
+        <% end %>
+        <% unless @ingredient.ingredient5 == "" %>
+          <li><%= @ingredient.ingredient5 %></li>
+        <% end %>
+        <% unless @ingredient.ingredient6 == "" %>
+          <li><%= @ingredient.ingredient6 %></li>
+        <% end %>
+        <% unless @ingredient.ingredient7 == "" %>
+          <li><%= @ingredient.ingredient7 %></li>
+        <% end %>
       </ul>
     </div>
     <% if user_signed_in? && @cooking.user_id == current_user.id %>
