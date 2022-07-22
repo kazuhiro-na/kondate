@@ -1,5 +1,5 @@
 class CookingsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :show]
+  before_action :authenticate_user!, only: [:new, :create, :show, :destroy]
   def index
     if user_signed_in?
       cookings = Cooking.where(user_id: current_user.id)
@@ -25,6 +25,15 @@ class CookingsController < ApplicationController
   def show
     @cooking = Cooking.find(params[:id])
     @ingredient = @cooking.ingredient
+  end
+
+  def destroy
+    @cooking = Cooking.find(params[:id])
+    if current_user.id == @cooking.user_id
+      @cooking.ingredient.destroy
+      @cooking.destroy
+    end
+    redirect_to user_path(current_user.id)
   end
 
   private 
