@@ -24,9 +24,15 @@ https://kondate-37427.herokuapp.com/
 [要件を定義したシート](https://docs.google.com/spreadsheets/d/1UR9DD2WO1-waoPM30F4Ey6nfHtSKaI3y_M5lSEKrWBY/edit#gid=982722306)
 # 実装した機能についての画像やGIFおよびその説明
 ・ランダムボタンを押すと、献立リストが入れ替わる。
-[![Image from Gyazo](https://i.gyazo.com/6b6807364be076fa6b6ef74cc8005b03.gif)](https://gyazo.com/6b6807364be076fa6b6ef74cc8005b03)
+[![Image from Gyazo](https://i.gyazo.com/f954b32796f65d202d9971f1f9b5b3c2.gif)](https://gyazo.com/f954b32796f65d202d9971f1f9b5b3c2)
+
+・材料リストを押すと、料理ごとの材料リストが表示される
+[![Image from Gyazo](https://i.gyazo.com/49d7ccb2099371e02cf25a07d905f5fe.gif)](https://gyazo.com/49d7ccb2099371e02cf25a07d905f5fe)
+
+・マイページを押すと、自身が登録した全ての料理が表示される
+[![Image from Gyazo](https://i.gyazo.com/a61c9f95a16a927eaff022e90d87a1c0.gif)](https://gyazo.com/a61c9f95a16a927eaff022e90d87a1c0)
+
 # 実装予定の機能
-・料理毎に、プルダウンをクリックして材料リストを表示する機能  
 ・献立リストのランダム表示件数を、任意の件数に変更できる機能  
 ・献立リストの中から任意の料理だけをシャッフルできる機能  
 ・カテゴリーをクリックすると、同じカテゴリーの料理を表示する機能
