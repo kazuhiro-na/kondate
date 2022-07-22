@@ -27,6 +27,15 @@ class CookingsController < ApplicationController
     @ingredient = @cooking.ingredient
   end
 
+  def destroy
+    @cooking = Cooking.find(params[:id])
+    if current_user.id == @cooking.user_id
+      @cooking.ingredient.destroy
+      @cooking.destroy
+    end
+    redirect_to user_path(current_user.id)
+  end
+
   private 
 
   def cooking_params
