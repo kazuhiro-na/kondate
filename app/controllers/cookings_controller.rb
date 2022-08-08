@@ -36,6 +36,10 @@ class CookingsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
+  def edit
+
+  end
+
   private 
 
   def cooking_params
