@@ -37,7 +37,8 @@ class CookingsController < ApplicationController
   end
 
   def edit
-
+    @cooking = Cooking.find(params[:id])
+    @ingredient = @cooking.ingredient
   end
 
   private 
