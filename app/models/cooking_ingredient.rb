@@ -1,7 +1,8 @@
 class CookingIngredient
   include ActiveModel::Model
   attr_accessor :image, :name, :category_id, :ingredient1, :ingredient2, :ingredient3, :ingredient4, :ingredient5, :ingredient6,
-                :ingredient7, :user_id
+                :ingredient7, :user_id,
+                :id, :created_at, :datetime, :updated_at, :datetime
 
   with_options presence: true do
     validates :image
