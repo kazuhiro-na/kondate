@@ -38,8 +38,11 @@ class CookingsController < ApplicationController
 
   def edit
     @cooking = Cooking.find(params[:id])
+    @ingredient = @cooking.ingredient
     cooking_attributes = @cooking.attributes
-    @cooking_ingredient = CookingIngredient.new(cooking_attributes)
+    ingredient_attributes = @ingredient.attributes
+    cooking_ingredient = cooking_attributes.merge(ingredient_attributes)
+    @cooking_ingredient = CookingIngredient.new(cooking_ingredient)
   end
 
   def update
