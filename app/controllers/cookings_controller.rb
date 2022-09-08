@@ -36,6 +36,27 @@ class CookingsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
+  def edit
+    @cooking = Cooking.find(params[:id])
+    @ingredient = @cooking.ingredient
+    cooking_attributes = @cooking.attributes
+    ingredient_attributes = @ingredient.attributes
+    cooking_ingredient = cooking_attributes.merge(ingredient_attributes)
+    @cooking_ingredient = CookingIngredient.new(cooking_ingredient)
+  end
+
+  def update
+    @cooking = Cooking.find(params[:id])
+    @cooking_ingredient = CookingIngredient.new(cooking_params)
+    @cooking_ingredient.image ||= @cooking.image.blob
+    if @cooking_ingredient.valid?
+      @cooking_ingredient.update(@cooking.id)
+      redirect_to user_path(current_user.id)
+    else
+      render :edit
+    end
+  end
+
   private 
 
   def cooking_params

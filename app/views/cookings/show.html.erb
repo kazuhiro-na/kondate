@@ -39,7 +39,7 @@
     </div>
     <% if user_signed_in? && @cooking.user_id == current_user.id %>
       <div class="d-inline-block mt-5">
-        <%= link_to "料理の編集", root_path, method: :get, class: "btn btn-secondary btn-lg" %>
+        <%= link_to "料理の編集", edit_cooking_path(@cooking.id), method: :get, class: "btn btn-secondary btn-lg" %>
         <%= link_to "削除", cooking_path(@cooking.id), method: :delete, class:"btn btn-danger btn-lg" %>
       </div>
     <% end %>

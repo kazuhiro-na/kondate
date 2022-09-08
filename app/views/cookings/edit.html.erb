@@ -1,0 +1,65 @@
+<div class="cookings-sell-contents">
+  <div class="cookings-sell-main">
+    <h2 class="cookings-sell-title">料理情報を編集</h2>
+    <%= form_with model: @cooking_ingredient, url: cooking_path(@cooking.id), method: :patch, local: true do |f| %>
+
+    <%# 料理画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        料理画像
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックして写真をアップロード  
+        </p>
+        <%= f.file_field :image, id:"cooking-image" %>
+      </div>
+    </div>
+    <%# /料理画像 %>
+    <%# 料理情報入力 %> 
+    <div class="new-cookings">
+      <div class="weight-bold-text">
+        料理名
+      </div>
+      <%= f.text_area :name, class:"cookings-text", id:"cooking-name", placeholder:"料理名を入力" %>
+      <div class="cookings-category">
+        <div class="weight-bold-text">
+          カテゴリー
+        </div>
+        <%= f.collection_select :category_id, Category.all, :id, :name, {}, {class:"category-select"} %>
+      </div>
+      <div class="weight-bold-text">
+        材料(任意)
+      </div>
+      <%= f.text_area :ingredient1, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+      <div class="weight-bold-text">
+      </div>
+      <%= f.text_area :ingredient2, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+      <div class="weight-bold-text">
+      </div>
+      <%= f.text_area :ingredient3, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+      <div class="weight-bold-text">
+      </div>
+      <%= f.text_area :ingredient4, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+      <div class="weight-bold-text">
+      </div>
+      <%= f.text_area :ingredient5, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+      <div class="weight-bold-text">
+      </div>
+      <%= f.text_area :ingredient6, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+      <div class="weight-bold-text">
+      </div>
+      <%= f.text_area :ingredient7, class:"cookings-text", id:"cooking-name", placeholder:"材料名を入力" %>
+    </div>
+    <%# /料理情報入力 %>
+
+
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "料理を編集する" ,class:"sell-btn btn btn-success" %>
+      <%=link_to 'もどる', root_path, class:"back-btn btn btn-secondary" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
