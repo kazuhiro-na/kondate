@@ -13,7 +13,15 @@ class CookingIngredient
 
   def save
     cooking = Cooking.create(image: image, name: name, category_id: category_id, user_id: user_id)
-    Ingredient.create(ingredient1: ingredient1, ingredient2: ingredient2, ingredient3: ingredient3, ingredient4: ingredient4,
+    ingredient = Ingredient.create(ingredient1: ingredient1, ingredient2: ingredient2, ingredient3: ingredient3, ingredient4: ingredient4,
+                      ingredient5: ingredient5, ingredient6: ingredient6, ingredient7: ingredient7, cooking_id: cooking.id)
+  end
+
+  def update(id)
+    cooking = Cooking.find(id)
+    ingredient = cooking.ingredient
+    u_cooking = cooking.update(image: image, name: name, category_id: category_id, user_id: user_id)
+    u_ingredient = ingredient.update(ingredient1: ingredient1, ingredient2: ingredient2, ingredient3: ingredient3, ingredient4: ingredient4,
                       ingredient5: ingredient5, ingredient6: ingredient6, ingredient7: ingredient7, cooking_id: cooking.id)
   end
 end
