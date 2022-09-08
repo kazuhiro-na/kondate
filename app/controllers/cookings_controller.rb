@@ -47,8 +47,10 @@ class CookingsController < ApplicationController
 
   def update
     @cooking = Cooking.find(params[:id])
-    @ingredient = @cooking.ingredient
-    if @cooking.update(u_cooking_params) && @ingredient.update(u_ingredient_params)
+    @cooking_ingredient = CookingIngredient.new(cooking_params)
+    @cooking_ingredient.image ||= @cooking.image.blob
+    if @cooking_ingredient.valid?
+      @cooking_ingredient.update(@cooking.id)
       redirect_to user_path(current_user.id)
     else
       render :edit
@@ -60,13 +62,5 @@ class CookingsController < ApplicationController
   def cooking_params
     params.require(:cooking_ingredient).permit(:image, :name, :category_id, :ingredient1, :ingredient2, :ingredient3,
                                                :ingredient4, :ingredient5, :ingredient6, :ingredient7).merge(user_id: current_user.id)
-  end
-
-  def u_cooking_params
-    params.permit(:image, :name, :category_id).merge(user_id: current_user.id)
-  end
-
-  def u_ingredient_params
-    params.permit(:ingredient1, :ingredient2, :ingredient3, :ingredient4, :ingredient5, :ingredient6, :ingredient7)
   end
 end
