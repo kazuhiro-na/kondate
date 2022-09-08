@@ -1,7 +1,7 @@
 <div class="cookings-sell-contents">
   <div class="cookings-sell-main">
     <h2 class="cookings-sell-title">料理情報を編集</h2>
-    <%= form_with model: @cooking, url: cooking_path, local: true do |f| %>
+    <%= form_with model: @cooking_ingredient, url: cooking_path(@cooking.id), method: :patch, local: true do |f| %>
 
     <%# 料理画像 %>
     <div class="img-upload">
@@ -16,7 +16,7 @@
       </div>
     </div>
     <%# /料理画像 %>
-    <%# 料理情報入力 %>
+    <%# 料理情報入力 %> 
     <div class="new-cookings">
       <div class="weight-bold-text">
         料理名
@@ -28,7 +28,6 @@
         </div>
         <%= f.collection_select :category_id, Category.all, :id, :name, {}, {class:"category-select"} %>
       </div>
-      <%= form_with model: @ingredient, url: cooking_path, local: true do |f| %>
       <div class="weight-bold-text">
         材料(任意)
       </div>
@@ -63,5 +62,4 @@
     </div>
     <%# /下部ボタン %>
   </div>
-  <% end %>
   <% end %>
